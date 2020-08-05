@@ -58,7 +58,7 @@ def main():
 
         pygame.draw.rect(screen, RED, (hero['x'], hero['y'], 15, 40))
         pygame.draw.rect(screen, DARK_GREY, (0, 340, SIZE[0], SIZE[1]))
-        pygame.draw.rect(screen, GREEN, (60, 300, 10, 40))
+        pygame.draw.rect(screen, GREEN, (60, 300, 10, 40))  #test
 
         pygame.display.update()
         clock.tick(FPS)
