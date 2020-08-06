@@ -3,6 +3,7 @@ import random
 
 pygame.init()
 pygame.font.init()
+pygame.mixer.init()
 
 # const
 SIZE = (700, 600)
@@ -31,6 +32,8 @@ enemy_pos = [[SIZE[0], 300]]
 pygame.time.set_timer(SPAWN_ENEMY, 1200)
 enemy_speed = 5
 
+jump_sound = pygame.mixer.Sound('jump.ogg')
+
 
 def jump(y, speed):
     y -= speed
@@ -55,6 +58,7 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     is_jump = True
+                    jump_sound.play()
             if event.type == SPAWN_ENEMY:
                 enemy_pos.append([SIZE[0], 300])
 
